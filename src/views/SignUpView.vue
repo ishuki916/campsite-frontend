@@ -38,16 +38,14 @@ const loginPage = () => {
 }
 </script>
 <template>
-  <div id="signUpPage" class="bg-yellow">
-    <div class="conatiner signUpPage vhContainer">
-      <div class="side">
-      </div>
-      <div>
-        <form class="formControls" action="index.html">
-          <h2 class="formControls_txt">註冊帳號</h2>
-          <label class="formControls_label" for="email">Email</label>
+    <div class="container mt-5 mb-5" style="max-width: 400px;">
+
+        <form>
+          <h2 style="color: green;">註冊帳號</h2>
+          <div class="mb-3">
+          <label class="form-label" for="email">Email</label>
           <input
-            class="formControls_input"
+            class="form-control"
             type="text"
             id="email"
             name="email"
@@ -55,18 +53,22 @@ const loginPage = () => {
             v-model="newUser.email"
             required
           />
-          <label class="formControls_label" for="name">您的暱稱</label>
+          </div>
+          <div class="mb-3">
+          <label class="form-label" for="name">您的暱稱</label>
           <input
-            class="formControls_input"
+            class="form-control"
             type="text"
             name="name"
             id="name"
             placeholder="請輸入您的暱稱"
             v-model="newUser.username"
           />
-          <label class="formControls_label" for="pwd">密碼</label>
+          </div>
+          <div class="mb-3">
+          <label class="form-label" for="pwd">密碼</label>
           <input
-            class="formControls_input"
+            class="form-control"
             type="password"
             name="pwd"
             id="pwd"
@@ -74,9 +76,11 @@ const loginPage = () => {
             v-model="newUser.password"
             required
           />
-          <label class="formControls_label" for="pwd">再次輸入密碼</label>
+          </div>
+          <div class="mb-3">
+          <label class="form-label" for="pwd">再次輸入密碼</label>
           <input
-            class="formControls_input"
+            class="form-control"
             type="password"
             name="pwd"
             id="checkPwd"
@@ -84,11 +88,13 @@ const loginPage = () => {
             v-model="checkPwd"
             required
           />
-          <input class="formControls_btnSubmit" type="button" @click="signUp" value="註冊帳號" />
-          <a class="formControls_btnLink" @click="loginPage">登入</a>
+          </div>
+          <div class="d-flex justify-content-between">
+          <input class="btn btn-outline-success" type="button" @click="signUp" value="註冊帳號" />
+          <a style="color: green;" @click="loginPage">登入</a>
+        </div>
         </form>
       </div>
-    </div>
-  </div>
+
 </template>
 <style scoped></style>

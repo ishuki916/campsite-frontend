@@ -34,19 +34,13 @@ const signUpPage = () => {
 // }
 </script>
 <template>
-  <div id="loginPage" class="bg-yellow">
-    <div class="conatiner loginPage vhContainer">
-      <div class="side">
-        <a href="#"
-          ></a>
-        
-      </div>
-      <div>
-        <form class="formControls" action="index.html">
-          <h2 class="formControls_txt">Let's Camping</h2>
-          <label class="formControls_label" for="text">帳號</label>
+    <div class="container mt-5 mb-5" style="max-width: 400px;">
+        <form>
+          <div class="mb-3">
+          <h2 style="color: green;">Let's Camping</h2>
+          <label class="form-label" for="text">帳號</label>
           <input
-            class="formControls_input"
+            class="form-control"
             type="text"
             id="username"
             name="username"
@@ -54,10 +48,13 @@ const signUpPage = () => {
             placeholder="請輸入帳號"
             required
           />
-          <span>此欄位不可留空</span>
-          <label class="formControls_label" for="pwd">密碼</label>
+          <span class="form-text">此欄位不可留空</span>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="pwd">密碼</label>
           <input
-            class="formControls_input"
+            class="form-control"
             type="password"
             name="pwd"
             id="pwd"
@@ -65,10 +62,14 @@ const signUpPage = () => {
             placeholder="請輸入密碼"
             required
           />
-          <input class="formControls_btnSubmit" type="button" @click="login" value="登入" />
-          <a class="formControls_btnLink" @click="signUpPage">註冊帳號</a>
+        </div>
+        <div class="d-flex justify-content-between">
+          <input class="btn btn-outline-success" type="button" @click="login" value="登入" />
+         
+          <a style="color: green;" @click="signUpPage">註冊帳號</a>
+        </div>
+          
         </form>
-      </div>
     </div>
-  </div>
+
 </template>
