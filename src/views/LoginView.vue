@@ -2,6 +2,7 @@
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import axios from 'axios'
+import { API_ENDPOINTS } from '@/api'
 
 const router = useRouter()
 const user = ref({
@@ -12,7 +13,7 @@ const user = ref({
 const login = async () => {
   try {
     console.log(user.value)
-    const res = await axios.post('http://localhost:8080/login', user.value)
+    const res = await axios.post(API_ENDPOINTS.LOGIN_API, user.value)
     console.log(res)
 
     document.cookie = `tkn=${res.data.token}; path=/; `

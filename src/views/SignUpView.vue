@@ -2,6 +2,7 @@
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import axios from 'axios'
+import {API_ENDPOINTS} from '@/api'
 const router = useRouter()
 const newUser = ref({
   password: '',
@@ -18,7 +19,7 @@ const signUp = async () => {
     return
   }
   try {
-    const res = await axios.post('http://localhost:8080/sign-up', newUser.value)
+    const res = await axios.post(API_ENDPOINTS.SIGNUP_API, newUser.value)
     loginPage()
   } catch (err) {
     console.log(err.response.data.message)
