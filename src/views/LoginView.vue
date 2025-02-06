@@ -30,6 +30,16 @@ const signUpPage = () => {
   router.push('/signUp')
 }
 
+const googleLogin = async () => {
+  try {
+    window.location.href = API_ENDPOINTS.GOOGLE_LOGIN_API;
+  } catch (err) {
+    console.log(err)
+    alert(err.response.data.message)
+  }
+}
+
+
 // const toDoListPage = () => {
 //   router.push('/toDoList')
 // }
@@ -66,7 +76,7 @@ const signUpPage = () => {
         </div>
         <div class="d-flex justify-content-between">
           <input class="btn btn-outline-success" type="button" @click="login" value="登入" />
-         
+          <input class="btn btn-primary" type="button" @click="googleLogin" value="GOOGLE 登入" />
           <a style="color: green;" @click="signUpPage">註冊帳號</a>
         </div>
           

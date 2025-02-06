@@ -2,7 +2,7 @@
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import axios from 'axios'
-import {API_ENDPOINTS} from '@/api'
+import { API_ENDPOINTS } from '@/api'
 const router = useRouter()
 const newUser = ref({
   password: '',
